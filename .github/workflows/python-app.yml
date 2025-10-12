@@ -46,4 +46,5 @@ jobs:
       - name: Run tests with pytest
         run: |
           # Add 'src' to the Python path so imports like 'from src.module import func' work
-          PYTHONPATH=src pytest -v
+          export PYTHONPATH=$PYTHONPATH:$(pwd)/src
+          pytest -v
